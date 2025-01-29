@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   --color-deep-violet: #030233; 
   --color-lighter-violet: #121e57;
@@ -25,6 +24,10 @@ html {
     border-right: 5px outset var(--color-deep-violet);
 
     border-bottom: 5px outset var(--color-deep-violet)
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
   }
 }
 

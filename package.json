@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@atproto/api": "^0.13.31",
     "@nuxt/fonts": "^0.10.3",
     "@tailwindcss/vite": "^4.0.0",
     "@tanstack/vue-query": "^5.65.0",
