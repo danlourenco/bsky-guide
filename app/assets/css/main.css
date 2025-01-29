@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-deep-violet: #030233; 
+  --color-lighter-violet: #121e57;
+  --color-drab-grey: #727473; 
+  --color-electric-lemongrass: #889406;
+  --font-display: "PrevueGrid", "sans-serif";
+}
+
+html {
+  background-color: var(--color-deep-violet);
+}
+
+@layer components {
+  .dropshadow {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8)
+  }
+
+  .embossed {
+    border-collapse: separate;
+    border-left: 6px outset var(--color-drab-grey);
+    border-top:10px outset var(--color-drab-grey);
+    border-right: 5px outset var(--color-deep-violet);
+
+    border-bottom: 5px outset var(--color-deep-violet)
+  }
+}
+
+
