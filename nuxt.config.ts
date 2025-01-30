@@ -18,6 +18,9 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/fonts'],
   fonts: {
+    google: {
+     
+    },
     experimental: {
       processCSSVariables: true
     }

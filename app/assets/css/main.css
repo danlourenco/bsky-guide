@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 @theme {
+  --color-light-blue: #2e6fa9;
   --color-deep-violet: #030233; 
   --color-lighter-violet: #121e57;
   --color-drab-grey: #727473; 
   --color-electric-lemongrass: #889406;
   --font-display: "PrevueGrid", "sans-serif";
+  --font-heading: "Righteous", "sans-serif";
+  --font-cursive: "Great Vibes", "cursive";
+  --font-garamond: "EB Garamond", "serif";
 }
 
 html {
@@ -28,6 +32,10 @@ html {
 
   .no-scrollbar {
     scrollbar-width: none;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 3px white;
   }
 }
 
