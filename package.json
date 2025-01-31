@@ -12,6 +12,7 @@
   "dependencies": {
     "@atproto/api": "^0.13.31",
     "@nuxt/fonts": "^0.10.3",
+    "@nuxthub/core": "^0.8.15",
     "@tailwindcss/vite": "^4.0.0",
     "@tanstack/vue-query": "^5.65.0",
     "@tanstack/vue-virtual": "^3.11.3",
