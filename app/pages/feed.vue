@@ -11,12 +11,14 @@
       <div class="flex flex-1 flex-col justify-between text-center font-display dropshadow text-white text-5xl">
        
         <p class="my-4 ">This app is under active development. <br/> Find any bugs? Report them to me, @danlouren.co on Bluesky.</p>
+        <button class="bg-lighter-violet text-electric-lemongrass uppercase py-2 cursor-pointer" @click="toggleScroll" v-show="!startScroll">Start Scroll</button>
         <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1323512037/size=small/bgcol=ffffff/linkcol=0687f5/track=3521368349/transparent=true/" seamless><a href="https://trndytrndy.bandcamp.com/album/virtua">Virtua by trndytrndy</a></iframe>
         
       </div>
     </div>
 
       <ScrollingTable
+        :shouldScroll="startScroll"
         :allRows="allRows"
         :hasNextPage="hasNextPage"
         :isFetchingNextPage="isFetchingNextPage"
@@ -41,6 +43,10 @@ const fetchTimeline = async ({ pageParam }) => {
   });
 };
 
+const startScroll = ref(false);
+const toggleScroll = () => {
+  startScroll.value = !startScroll.value;
+};
 const {
   status,
   data,

@@ -4,12 +4,14 @@ import { computed, ref, watchEffect } from "vue";
 import { formatDate, smoothScroll } from "@/utils/helpers";
 
 interface Props {
+  shouldScroll: boolean;
   allRows: any[];
   hasNextPage: boolean;
   isFetchingNextPage: boolean;
   fetchNextPage: () => void;
 }
 const props = withDefaults(defineProps<Props>(), {
+  shouldScroll: false,
   allRows: [],
   hasNextPage: false,
   isFetchingNextPage: false,
@@ -30,11 +32,10 @@ const getCount = computed(() => {
   return props.hasNextPage ? props.allRows.length + 1 : props.allRows.length;
 });
 
-// TODO: Clean this up. Truly understand overscan and estimateSize values
+// TODO: Clean this up. Truly understand estimateSize values
 const rowVirtualizerOptions = computed(() => {
   return {
     count: getCount.value,
-    debug: true,
     overscan: 5,
     getScrollElement: () => parentRef.value,
     estimateSize: () => 210, 
@@ -59,16 +60,20 @@ watchEffect(() => {
   }
 });
 
+
+
 watchEffect(() => {
-  if (props?.allRows.length > 0) {
+  if (props?.allRows.length > 0 && props.shouldScroll) {
     rowVirtualizer.value.scrollToIndex(props.allRows.length);
   }
 });
+
 </script>
 
 <template>
   <div class="text-drab-grey font-display dropshadow text-5xl">
-      <div class="flex w-full">
+    <!-- Fixed Header-->  
+    <div class="flex w-full">
         <div
           class="text-drab-grey embossed w-[400px] text-center bg-lighter-violet py-2"
         >
@@ -80,7 +85,8 @@ watchEffect(() => {
           {{ formattedDate }}
         </div>
       </div>
-      <div ref="parentRef" class="overflow-auto w-full h-full no-scrollbar">
+      <!-- Scrolling Content-->
+      <div ref="parentRef" class="overflow-auto w-full h-[calc(100%-80px)] no-scrollbar">
         <div
           :style="{
             // height: `${totalSize}px`,
