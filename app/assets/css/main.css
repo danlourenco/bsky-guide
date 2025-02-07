@@ -14,10 +14,10 @@
 }
 
 html {
+  -webkit-font-smoothing: antialiased;
   background-color: var(--color-deep-violet);
-
   background: rgb(35,51,136);
-  background: linear-gradient(180deg, rgba(35,51,136,1) 0%, rgba(0,0,50,1) 20%, rgba(0,0,50,1) 100%);
+  background: linear-gradient(180deg, rgba(35,51,136,1) 0%, rgba(0,0,50,1) 30%, rgba(0,0,50,1) 100%);
 }
 
 @layer components {

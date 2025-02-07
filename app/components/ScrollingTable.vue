@@ -30,12 +30,14 @@ const getCount = computed(() => {
   return props.hasNextPage ? props.allRows.length + 1 : props.allRows.length;
 });
 
+// TODO: Clean this up. Truly understand overscan and estimateSize values
 const rowVirtualizerOptions = computed(() => {
   return {
     count: getCount.value,
+    debug: true,
     overscan: 5,
     getScrollElement: () => parentRef.value,
-    estimateSize: () => 250,
+    estimateSize: () => 210, 
     scrollToFn,
   };
 });
@@ -78,7 +80,7 @@ watchEffect(() => {
           {{ formattedDate }}
         </div>
       </div>
-      <div ref="parentRef" class="overflow-auto w-full h-[1200px] no-scrollbar">
+      <div ref="parentRef" class="overflow-auto w-full h-full no-scrollbar">
         <div
           :style="{
             // height: `${totalSize}px`,
@@ -103,7 +105,8 @@ watchEffect(() => {
             <div
               class="text-electric-lemongrass embossed min-w-[400px] max-w-[400px] bg-deep-violet p-2 text-center"
             >
-              {{ allRows[virtualRow.index].post.author.displayName }} <br />
+              <h2>{{ virtualRow.index }}</h2>
+              <span class="uppercase text-4xl">{{ allRows[virtualRow.index].post.author.displayName }}</span> <br />
               <div class="text-2xl">
                 {{ allRows[virtualRow.index].post.author.handle }}
               </div>
@@ -111,7 +114,8 @@ watchEffect(() => {
             <div
               class="embossed flex-1 bg-deep-violet text-drab-grey p-2 overflow-ellipsis"
             >
-              {{ allRows[virtualRow.index].post.record.text }}
+            <p class="line-clamp-4">{{ allRows[virtualRow.index].post.record.text }}</p>
+              
             </div>
           </div>
         </div>
