@@ -29,9 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  middleware: ["auth"],
-});
+
 import { useInfiniteQuery } from "@tanstack/vue-query";
 const { $agent } = useNuxtApp();
 

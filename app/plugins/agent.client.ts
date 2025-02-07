@@ -1,22 +1,23 @@
-import { AtpAgent } from "@atproto/api";
+import { Agent } from "@atproto/api";
+import {
+  BrowserOAuthClient,
+  OAuthSession,
+} from "@atproto/oauth-client-browser";
+
 
 export default defineNuxtPlugin((nuxtApp) => {
-    console.log("Inside the agent.client.ts file");
+  let oauthClient: BrowserOAuthClient;
 
-    // Instantiate the AtpAgent
-    const agent = new AtpAgent({
-      service: "https://bsky.social",
-      // persistSession: async (evt, session) => {
-      //   console.log({ evt, session });
-      //   if (session) {
-      //     localStorage.setItem("bsky-session", JSON.stringify(session));
-      //   }
-      // },
+  nuxtApp.hook("app:beforeMount", async () => {
+     oauthClient = new BrowserOAuthClient({
+      handleResolver: "https://bsky.social",
+      clientMetadata: undefined
     });
+  });
+ 
 
     return {
         provide: {
-           agent: agent, 
         }
     }
 });
