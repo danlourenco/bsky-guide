@@ -71,7 +71,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="text-drab-grey font-display dropshadow text-5xl">
+  <div class="font-display dropshadow text-5xl">
     <!-- Fixed Header-->  
     <div class="flex w-full">
         <div
