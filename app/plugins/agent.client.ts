@@ -6,12 +6,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     // Instantiate the AtpAgent
     const agent = new AtpAgent({
       service: "https://bsky.social",
-      persistSession: async (evt, session) => {
-        console.log({ evt, session });
-        if (session) {
-          localStorage.setItem("bsky-session", JSON.stringify(session));
-        }
-      },
+      // persistSession: async (evt, session) => {
+      //   console.log({ evt, session });
+      //   if (session) {
+      //     localStorage.setItem("bsky-session", JSON.stringify(session));
+      //   }
+      // },
     });
 
     return {

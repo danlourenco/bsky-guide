@@ -34,11 +34,11 @@ const login = async () => {
       class="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box mx-auto mt-8"
     >
 
-      <label class="fieldset-label">Username</label>
+      <!-- <label class="fieldset-label">Username</label>
       <input type="text" class="input" placeholder="user.bsky.app" v-model="credentials.username" required />
 
       <label class="fieldset-label">Password</label>
-      <input type="password" class="input" placeholder="Password" v-model="credentials.password" required />
+      <input type="password" class="input" placeholder="Password" v-model="credentials.password" required /> -->
 
       <button class="btn btn-neutral mt-4" type="submit">Login</button>
     </fieldset>

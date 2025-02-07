@@ -1,5 +1,16 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
-    const { $agent } = useNuxtApp();
+    console.log('auth middleware');
+
+    // TODO: Check to see if there is a session.
+
+    // If there is a session, resume the session.
+      // const oauthsession = oauthClient.restore('...');
+      // agent = newAgent(oauthsession)
+    // If there is no session, redirect to login.
+
+    
+    // Creds based auth stuff
+  /*     const { $agent } = useNuxtApp();
 
     const data = localStorage.getItem("bsky-session");
     if (data) {
@@ -12,6 +23,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       if (to.path !== '/') {
         return navigateTo('/')
       }
-    }
+    } */
 
   })
