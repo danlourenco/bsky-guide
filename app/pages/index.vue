@@ -19,16 +19,14 @@ const login = async () => {
 </script>
 
 <template>
-  <div class="bg-deep-violet container mx-auto flex flex-col justify-center align-center">
+  <div class="container mx-auto flex flex-col justify-center align-center h-dvh w-full">
     <div class="mt-8">
       <h1
         class="text-8xl text-center font-heading dropshadow text-light-blue text-stroke"
       >
         BlueSky Guide
       </h1>
-      <div class="font-garamond text-white text-6xl text-center">
-        We Are What's On
-      </div>
+   
     </div>
 
     <form @submit.prevent="login" class="b">
