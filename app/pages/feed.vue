@@ -14,11 +14,11 @@
         </video>
       </div>
       <div
-        class="flex flex-1 flex-col justify-center text-center font-display dropshadow text-white text-5xl"
+        class="flex flex-1 flex-col justify-center text-center font-display dropshadow text-white text-4xl gap-2 p-4"
       >
         <p class="my-4" v-show="startScroll">
-          This app is under active development. <br />
-          Find any bugs? Report them to me, @danlouren.co on Bluesky.
+          This app is under active development. Suggestions? Feedback? Let us know!
+          Send a message to me on Bluesky: @danlouren.co
         </p>
         <button
           class="bg-lighter-violet text-electric-lemongrass uppercase py-2 cursor-pointer w-full"
