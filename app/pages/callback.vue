@@ -4,10 +4,6 @@ definePageMeta({
   middleware: [
     function (to, from) {
     const { $agent } = useNuxtApp();
-
-      // Custom inline middleware
-      console.log($agent);
-      console.log("Middleware", to, from);
       return navigateTo("/feed");
     },
    
