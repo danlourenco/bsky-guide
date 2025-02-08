@@ -2,7 +2,7 @@
     "client_id": "https://bsky-guide.nuxt.dev/client-metadata.json",
     "client_name": "Bluesky Guide",
     "client_uri": "https://bsky-guide.nuxt.dev",
-    "redirect_uris": ["https://bsky-guide.nuxt.dev"],
+    "redirect_uris": ["https://bsky-guide.nuxt.dev/callback"],
     "scope": "atproto transition:generic",
     "grant_types": ["authorization_code", "refresh_token"],
     "response_types": ["code"],
