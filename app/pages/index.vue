@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="container mx-auto flex flex-col justify-center align-center h-dvh w-full">
       <h1 class="text-6xl text-center font-display text-white  my-6">
@@ -12,7 +8,5 @@
         Go to Feed
       </NuxtLink>
       </div>
-       
-     
   </div>
 </template>
