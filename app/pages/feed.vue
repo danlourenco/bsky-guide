@@ -3,33 +3,43 @@
     <!-- TOP SECTION-->
     <div class="flex">
       <div class="w-1/2 h-full">
-        <!-- <video autoplay muted loop class="w-full h-full object-cover aspect-square">
-        <source src="/ident.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video> -->
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/m8lXfLobKy4?si=3czTn5_QAStOWD47&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <video
+          autoplay
+          muted
+          loop
+          class="w-full h-full object-cover aspect-square"
+        >
+          <source src="/ident.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <div class="flex flex-1 flex-col justify-center not-odd:text-center font-display dropshadow text-white text-5xl">
-       
-        <p class="my-4 ">This app is under active development. <br/> Find any bugs? Report them to me, @danlouren.co on Bluesky.</p>
-        <button class="bg-lighter-violet text-electric-lemongrass uppercase py-2 cursor-pointer w-full" @click="toggleScroll" v-show="!startScroll">Start Scroll</button>
-        <!-- <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1323512037/size=small/bgcol=ffffff/linkcol=0687f5/track=3521368349/transparent=true/" seamless><a href="https://trndytrndy.bandcamp.com/album/virtua">Virtua by trndytrndy</a></iframe> -->
-        
+      <div
+        class="flex flex-1 flex-col justify-center text-center font-display dropshadow text-white text-5xl"
+      >
+        <p class="my-4" v-show="startScroll">
+          This app is under active development. <br />
+          Find any bugs? Report them to me, @danlouren.co on Bluesky.
+        </p>
+        <button
+          class="bg-lighter-violet text-electric-lemongrass uppercase py-2 cursor-pointer w-full"
+          @click="toggleScroll"
+          v-show="!startScroll"
+        >
+          Click here to start scrolling
+        </button>
       </div>
     </div>
-      <ScrollingTable
-        :shouldScroll="startScroll"
-        :allRows="allRows"
-        :hasNextPage="hasNextPage"
-        :isFetchingNextPage="isFetchingNextPage"
-        :fetchNextPage="fetchNextPage"
-      />
+    <ScrollingTable
+      :shouldScroll="startScroll"
+      :allRows="allRows"
+      :hasNextPage="hasNextPage"
+      :isFetchingNextPage="isFetchingNextPage"
+      :fetchNextPage="fetchNextPage"
+    />
   </div>
-  
 </template>
 
 <script lang="ts" setup>
-
 import { useInfiniteQuery } from "@tanstack/vue-query";
 const { $agent } = useNuxtApp();
 console.log($agent);
@@ -63,7 +73,7 @@ const {
   },
 });
 
-console.log($agent)
+console.log($agent);
 const allRows = computed(() =>
   data.value
     ? data.value.pages
