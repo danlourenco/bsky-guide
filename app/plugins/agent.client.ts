@@ -12,7 +12,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   
   const client = isDev 
   ? new BrowserOAuthClient({
-    handleResolver: "https://bsky.social",
+    handleResolver: "https://bsky.social/",
     // Only works if the current origin is a loopback address:
     clientMetadata: undefined,
   })
