@@ -11,15 +11,19 @@
         BlueSky Guide
       </h1>
    
+      <NuxtLink to="/feed" class="text-center text-4xl text-light-blue underline">
+        Go to Feed</NuxtLink>
     </div>
 
-    <form @submit.prevent="login" class="b">
+
+
+    <!-- <form @submit.prevent="login" class="b">
     <fieldset
       class="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box mx-auto mt-8"
     >
       <button class="btn btn-neutral mt-4" type="submit">Login</button>
     </fieldset>
-</form>
+</form> -->
 
 
   </div>

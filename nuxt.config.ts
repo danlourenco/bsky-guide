@@ -25,11 +25,4 @@ export default defineNuxtConfig({
       processCSSVariables: true
     }
   },
-
-  runtimeConfig: {
-    public: {
-      blueskyUsername: '',
-      blueskyPassword: '',
-    }
-  },
 })

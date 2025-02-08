@@ -32,7 +32,7 @@
 
 import { useInfiniteQuery } from "@tanstack/vue-query";
 const { $agent } = useNuxtApp();
-
+console.log($agent);
 const resultLimit: number = 100;
 
 const fetchTimeline = async ({ pageParam }) => {
@@ -63,6 +63,7 @@ const {
   },
 });
 
+console.log($agent)
 const allRows = computed(() =>
   data.value
     ? data.value.pages
