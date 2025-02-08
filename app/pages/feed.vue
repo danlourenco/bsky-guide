@@ -17,7 +17,6 @@
         
       </div>
     </div>
-
       <ScrollingTable
         :shouldScroll="startScroll"
         :allRows="allRows"
@@ -26,6 +25,7 @@
         :fetchNextPage="fetchNextPage"
       />
   </div>
+  
 </template>
 
 <script lang="ts" setup>

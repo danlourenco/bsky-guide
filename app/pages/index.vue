@@ -4,14 +4,15 @@
 
 <template>
   <div class="container mx-auto flex flex-col justify-center align-center h-dvh w-full">
-    <div class="mt-8">
-      <h1 class="text-8xl text-center font-heading dropshadow text-light-blue text-stroke">
-        BlueSky Guide
+      <h1 class="text-6xl text-center font-display text-white  my-6">
+        Bluesky Guide
       </h1>
-
-      <NuxtLink to="/feed" class="text-center text-4xl text-light-blue underline">
+      <div class="flex justify-center align-middle">
+        <NuxtLink to="/feed" class="border-2 rounded-2xl font-display text-center text-4xl text-electric-lemongrass hover:text-electric-lemongrass/80 w-fit p-2">
         Go to Feed
       </NuxtLink>
-    </div>
+      </div>
+       
+     
   </div>
 </template>
