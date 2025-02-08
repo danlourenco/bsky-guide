@@ -8,7 +8,7 @@ definePageMeta({
       // Custom inline middleware
       console.log($agent);
       console.log("Middleware", to, from);
-      navigateTo("/feed");
+      return navigateTo("/feed");
     },
    
   ],
